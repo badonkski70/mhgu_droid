@@ -182,6 +182,15 @@ public class GameActivity extends SDLActivity {
         if (activity != null) activity.startActivity(new Intent(activity, DriverActivity.class));
     }
 
+    /** Ajustes -> Trucos / Mods: el importador (ImportActivity). */
+    public static void importCheats() { startImport(ImportActivity.CHEATS); }
+    public static void importMod() { startImport(ImportActivity.MOD); }
+    public static void importDlc() { startImport(ImportActivity.DLC); }
+    private static void startImport(int kind) {
+        SDLActivity activity = mSingleton;
+        if (activity != null) activity.startActivity(new Intent(activity, ImportActivity.class).putExtra(ImportActivity.KIND, kind));
+    }
+
     public static void showSaveExport() {
         SDLActivity activity = mSingleton;
         if (activity != null) activity.startActivity(new Intent(activity, SaveExportActivity.class));

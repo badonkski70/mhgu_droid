@@ -4,7 +4,7 @@
 set -e
 ABI=${1:-arm64-v8a}
 TYPE=${2:-Release}
-API=29
+API=28
 HERE=$(cd "$(dirname "$0")" && pwd)
 ROOT=$(dirname "$HERE")
 SRC="$ROOT"
